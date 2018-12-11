@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>eleven</name>
+    <version>0.1.0</version>
+    <description>ROS packages for Eleven (metapackage)</description>
+
+    <author email="sweilz.w@gmail.com">Liews Wuttipat</author>
+    <maintainer email="sweilz.w@gmail.com">Liews Wuttipat</maintainer>
+    <license>BSD</license>
+
+    <url type="repository">https://github.com/SweiLz/Eleven</url>
+    <url type="bugtracker">https://github.com/SweiLz/Eleven/issues</url>
+
+    <buildtool_depend>catkin</buildtool_depend>
+    <!-- <exec_depend>ancube_description</exec_depend> -->
+
+    <export>
+        <metapackage/>
+    </export>
+</package>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="eleven_robot" 
+    xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find anman_sensors)/materials.xacro"/>
+    <xacro:include filename="$(find anman_sensors)/sensors/imu_mpu9250/imu_mpu9250.xacro"/>
+    <xacro:include filename="$(find anman_sensors)/sensors/ydlidar/ydlidar_g4.xacro"/>
+
+    <link name="base_footprint"/>
+
+    <joint name="base_fixed" type="fixed">
+        <origin xyz="0 0 0.2" rpy="0 0 0"/>
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+    </joint>
+
+    <link name="base_link"/>
+
+    <imu_mpu9250 prefix="imu" parent="base_link">
+        <origin xyz="-0.2 0 0" rpy="0 0 0"/>
+    </imu_mpu9250>
+
+    <ydlidar_g4 prefix="laser" parent="base_link" min_angle="-1.570796" max_angle="1.570796" prefix_topic=''>
+        <origin xyz="0.1 0 0.1" rpy="0 0 0"/>
+    </ydlidar_g4>
+
+</robot>
