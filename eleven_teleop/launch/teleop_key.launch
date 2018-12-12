@@ -1,0 +1,13 @@
+<launch>
+    <arg name="linear_vel_max" default="0.35"/>
+    <arg name="linear_vel_step" default="0.04"/>
+    <arg name="angular_vel_max" default="0.65"/>
+    <arg name="angular_vel_step" default="0.05"/>
+
+    <node pkg="eleven_teleop" name="teleop_key" type="teleop_key.py" output="screen">
+        <param name="linear_vel_max" value="$(arg linear_vel_max)"/>
+        <param name="angular_vel_max" value="$(arg angular_vel_max)"/>
+        <param name="linear_vel_step" value="$(arg linear_vel_step)"/>
+        <param name="angular_vel_step" value="$(arg angular_vel_step)"/>
+    </node>
+</launch>

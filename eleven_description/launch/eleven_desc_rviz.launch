@@ -4,7 +4,7 @@
     <arg name="rviz_config" default="$(find eleven_description)/config/eleven_rviz.rviz"/>
 
     <!-- Robot state -->
-    <include file="$(find eleven_description)/launch/eleven.launch"/>
+    <include file="$(find eleven_description)/launch/eleven_desc.launch"/>
 
     <!-- send fake joint values -->
     <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
