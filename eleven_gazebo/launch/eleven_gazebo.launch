@@ -6,8 +6,8 @@
     <arg name="headless" default="false"/>
     <arg name="debug" default="false"/>
 
-    <!-- <arg name="world" default="$(find eleven_gazebo)/worlds/empty.world"/> -->
-    <arg name="world" default="worlds/willowgarage.world"/>
+    <arg name="world" default="$(find eleven_gazebo)/worlds/empty.world"/>
+    <!-- <arg name="world" default="worlds/willowgarage.world"/> -->
     
     <!-- Gazebo world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -21,7 +21,7 @@
 
     <!-- Robot description -->
     <include file="$(find eleven_description)/launch/eleven_desc.launch"/>
-
+    
     <!-- Robot spawn model -->
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-param robot_description -urdf -x 0 -y 0 -z 0.1 -model eleven" />
 
