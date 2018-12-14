@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-    <arg name="cmd_vel_out" default="eleven/cmd_vel"/>
+    <arg name="cmd_vel_out" default="cmd_vel"/>
     <arg name="config_locks" default="$(find eleven_teleop)/config/twist_mux_locks.yaml"/>
     <arg name="config_topics" default="$(find eleven_teleop)/config/twist_mux_topics.yaml"/>
 

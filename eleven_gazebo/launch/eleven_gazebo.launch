@@ -6,8 +6,8 @@
     <arg name="headless" default="false"/>
     <arg name="debug" default="false"/>
 
-    <arg name="world" default="$(find eleven_gazebo)/worlds/empty.world"/>
-    <!-- <arg name="world" default="worlds/willowgarage.world"/> -->
+    <!-- <arg name="world" default="$(find eleven_gazebo)/worlds/empty.world"/> -->
+    <arg name="world" default="worlds/willowgarage.world"/>
     
     <!-- Gazebo world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">

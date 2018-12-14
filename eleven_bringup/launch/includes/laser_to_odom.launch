@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="laser_scan_topic" default="/scan"/>
+    <arg name="base_frame_id" default="/base_footprint"/>
+    <arg name="odom_frame_id" default="/odom"/>
+    <arg name="freq" default="19.9"/>
+    <arg name="odom_topic" default="/odom"/>
+
+    <!-- RF2O -->
+    <node pkg="rf2o_laser_odometry" type="rf2o_laser_odometry_node" name="laser_to_odom_node" output="screen">
+        <param name="laser_scan_topic" value="$(arg laser_scan_topic)"/>
+        <param name="base_frame_id" value="$(arg base_frame_id)"/>
+        <param name="odom_frame_id" value="$(arg odom_frame_id)"/>
+        <param name="freq" value="$(arg freq)"/>
+        <param name="odom_topic" value="$(arg odom_topic)"/>
+        <param name="verbose" value="true"/>
+        <param name="init_pose_from_topic" value=""/>
+        <param name="publish_tf" value="true"/>
+
+        <!-- <remap from="/laser_to_odom_node/odom" to="/odom_rf2o"/> -->
+    </node>
+</launch>

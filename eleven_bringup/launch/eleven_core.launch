@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+     <!-- Robot description -->
+    <!-- <include file="$(find eleven_description)/launch/eleven_desc.launch"/> -->
+    
+    <!-- Odom filter -->
+    <include file="$(find eleven_bringup)/launch/includes/odom_filter.launch" />
+
+     <!-- Laser to Odom -->
+    <!-- <include file="$(find eleven_bringup)/launch/includes/laser_to_odom.launch"/> -->
+</launch>
