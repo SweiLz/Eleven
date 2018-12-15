@@ -66,8 +66,8 @@
         <origin xyz="-0.25 0.08 0.1" rpy="0 0 ${PI/2}"/>
     </xacro:imu_mpu9250>
 
-    <!-- <xacro:ydlidar_g4 prefix="laser" parent="base_link" prefix_topic='' min_angle="-1.570796" max_angle="1.570796" min_range="0.26" max_range="12.0"> -->
-    <xacro:ydlidar_g4 prefix="laser" parent="base_link" prefix_topic='' min_range="0.26" max_range="12.0">
+    <xacro:ydlidar_g4 prefix="laser" parent="base_link" prefix_topic='' min_angle="-1.570796" max_angle="1.570796" min_range="0.26" max_range="12.0">
+    <!-- <xacro:ydlidar_g4 prefix="laser" parent="base_link" prefix_topic='' min_range="0.26" max_range="12.0"> -->
         <origin xyz="0.15 0 0.2" rpy="0 0 0"/>
     </xacro:ydlidar_g4>
 

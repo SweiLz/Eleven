@@ -36,9 +36,9 @@ $ roslaunch eleven_slam test_mapping_bagfile.launch
 ```
 ![](https://github.com/SweiLz/Eleven/blob/master/docs/images/wg_map_slam.jpeg?raw=true)
 
-> CPU: Intel® Core™ i7-8559U Processor (8M Cache, up to 4.50 GHz)
->
-> RAM: DDR4 8Gb
+> CPU: Intel® Core™ i7-8559U Processor (8M Cache, up to 4.50 GHz)  
+> HDD: SSD 128Gb  
+> RAM: DDR4 8Gb  
 
 ### AMCL Localization
 
@@ -46,3 +46,10 @@ $ roslaunch eleven_slam test_mapping_bagfile.launch
 $ roslaunch eleven_navigation test_localization.launch
 ```
 ![](https://github.com/SweiLz/Eleven/blob/master/docs/images/ele_amcl.png?raw=true)
+
+### Interactive path marker
+
+```
+$ roslaunch eleven_navigation eleven_pathmarker.launch
+```
+![](https://github.com/SweiLz/Eleven/blob/master/docs/images/path_marker.png?raw=true)

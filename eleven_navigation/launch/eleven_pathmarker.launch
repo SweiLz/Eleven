@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="rviz_config" default="$(find eleven_navigation)/config/pathmarker_rviz.rviz"/>
+
+    <!-- Map server -->
+    <include file="$(find eleven_navigation)/launch/includes/map_server.launch">
+        <arg name="map_name" default="wg_map"/>
+    </include>
+
+    <!-- Localization -->
+    <include file="$(find eleven_navigation)/launch/includes/amcl.launch"/>
+
+    <!-- Path marker -->
+    <include file="$(find eleven_navigation)/launch/includes/path_marker.launch"/>
+
+    <!-- Rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(arg rviz_config)"/>
+</launch>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-    <node pkg="ancube_navigation" type="path_marker.py" name="path_marker" output="screen">
+    <node pkg="eleven_navigation" type="path_marker.py" name="path_marker" output="screen">
         <param name="frame_id" value="map"/>
     </node>
 </launch>
