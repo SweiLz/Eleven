@@ -36,6 +36,10 @@ $ roslaunch eleven_slam test_mapping_bagfile.launch
 ```
 ![](https://github.com/SweiLz/Eleven/blob/master/docs/images/wg_map_slam.jpeg?raw=true)
 
+> CPU: Intel® Core™ i7-8559U Processor (8M Cache, up to 4.50 GHz)
+>
+> RAM: DDR4 8Gb
+
 ### AMCL Localization
 
 ```
