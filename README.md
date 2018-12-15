@@ -33,11 +33,8 @@ Download bag file and put into eleven_slam/bags:
 $ roslaunch eleven_slam test_mapping_bagfile.launch
 ```
 
-Using hector slam
-![](https://github.com/SweiLz/Eleven/blob/master/docs/images/wg_map_hector.png?raw=true)
+![](https://github.com/SweiLz/Eleven/blob/master/docs/images/wg_map_slam.jpeg?raw=true)
 
-Using gmapping slam
-![](https://github.com/SweiLz/Eleven/blob/master/docs/images/wg_map_gmapping.png?raw=true)
 
 
 
