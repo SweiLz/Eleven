@@ -22,15 +22,15 @@ laser_max_range: 15.0
 laser_max_beams: 30
 
 min_particles: 1000
-max_particles: 2000
+max_particles: 3000
 
 kld_err: 0.05
 kld_z: 0.99
 
-odom_alpha1: 0.2
-odom_alpha2: 0.2
-odom_alpha3: 0.8
-odom_alpha4: 0.2
+odom_alpha1: 0.15
+odom_alpha2: 0.15
+odom_alpha3: 0.05
+odom_alpha4: 0.15
 odom_alpha5: 0.1
 
 transform_tolerance: 0.5

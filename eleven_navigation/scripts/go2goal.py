@@ -29,7 +29,7 @@ class Robot(object):
 
         self.pose = Pose2D()
         self.pose_goal = Pose2D()
-        msg = rospy.wait_for_message(self.laser_topic, LaserScan)
+        rospy.wait_for_message(self.laser_topic, LaserScan)
         self.scan_filter = [99]
 
     def update_scan(self, msg):
@@ -113,26 +113,13 @@ if __name__ == "__main__":
         rospy.loginfo("HelloWorld")
 
         goal_poses = {
-            0: (10.1819, -8.3376),
-            1: (10.5238, -11.7919),
-            2: (15.7941, -11.1414),
-            3: (15.1038, -7.323),
-            4: (19.4293, -6.8259),
-            5: (22.1219, -6.4217),
-            6: (14.3713, -2.882),
-            7: (13.7628, 1.0976),
-            8: (8.8336, 0.7343),
-            9: (6.5943, 2.5905),
-            10: (7.0784, 6.1065),
-            11: (8.9669, 6.3103),
-            12: (10.825, 4.7789),
-            13: (4.8692, 0.629),
-            14: (1.7604, 0.3867)
-
+            0: (-0.9673,-3.5472),
+            1: (-6.9912,-3.6996),
+            2: (-8.8405,1.1381)
         }
 
         # path_list = [1,2,3,4,3,2,5,6,5,2,1]
-        path_list = [0,1,2,3,6,7,8,13,14,13,8,7,6,3,2,1]
+        # path_list = [0,1,2,3,6,7,8,13,14,13,8,7,6,3,2,1]
 
         goal_pos = Pose2D()
 
@@ -140,20 +127,20 @@ if __name__ == "__main__":
         # goal_pos.y = goal_poses[4][1]
 
         # robot.move2goal(goal_pos)
-        # while not rospy.is_shutdown():
-        #     point = int(raw_input("Enter Point: "))
-        #     goal_pos.x = goal_poses[point][0]
-        #     goal_pos.y = goal_poses[point][1]
-
-        #     robot.move2goal(goal_pos)
-
-
         while not rospy.is_shutdown():
-            for path in path_list:
-                goal_pos.x = goal_poses[path][0]
-                goal_pos.y = goal_poses[path][1]
+            point = int(raw_input("Enter Point: "))
+            goal_pos.x = goal_poses[point][0]
+            goal_pos.y = goal_poses[point][1]
 
-                robot.move2goal(goal_pos)
+            robot.move2goal(goal_pos)
+
+
+        # while not rospy.is_shutdown():
+        #     for path in path_list:
+        #         goal_pos.x = goal_poses[path][0]
+        #         goal_pos.y = goal_poses[path][1]
+
+        #         robot.move2goal(goal_pos)
 
         rospy.spin()
 

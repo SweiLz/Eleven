@@ -47,6 +47,14 @@ $ roslaunch eleven_navigation test_localization.launch
 ```
 ![](https://github.com/SweiLz/Eleven/blob/master/docs/images/ele_amcl.png?raw=true)
 
+### Navigation with move_base using dwa_local_planner
+
+```
+Terminal 1: $ roslaunch eleven_gazebo eleven_gazebo.launch
+Terminal 2: $ roslaunch eleven_navigation eleven_navigation.launch
+```
+![](https://github.com/SweiLz/Eleven/blob/master/docs/images/movebase_dwa.png?raw=true)
+
 ### Interactive path marker
 
 ```
