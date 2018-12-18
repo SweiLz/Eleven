@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- Robot base controller -->
+    <node pkg="eleven_bringup" type="eleven_base_controller.py" name="base_controller" output="screen">
+        <param name="port" value="/dev/ttyHover"/>
+        <param name="baud" value="115200"/>
+
+        <param name="base_id" value="base_footprint"/>
+        <param name="odom_id" value="odom"/>
+        <param name="cmd_topic" value="cmd_vel"/>
+        <param name="odom_topic" value="odom_wheel"/>
+        <param name="odom_freq" value="50"/>
+        <param name="imu_topic" value="imu/data"/>
+
+        <param name="publish_odom_frame" value="false"/>
+        
+        <param name="command_freq" value="50"/>
+        
+        <param name="wheel_separation" value="0.46"/>
+        <param name="wheel_radius" value="0.08255"/>
+
+        <param name="linear_max" value="10"/>
+        <param name="linear_min" value="-10"/>
+        <param name="angular_max" value="10"/>
+        <param name="angular_min" value="-10"/>
+    </node>
+
+</launch>

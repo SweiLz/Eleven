@@ -1,11 +1,33 @@
 <?xml version="1.0"?>
 <launch>
      <!-- Robot description -->
-    <!-- <include file="$(find eleven_description)/launch/eleven_desc.launch"/> -->
+    <include file="$(find eleven_description)/launch/eleven_desc.launch"/>
     
+    <!-- Lidar G4 -->
+    <include file="$(find eleven_bringup)/launch/includes/ydlidarG4.launch">
+        <arg name="port" value="/dev/ttyLidarG4"/>
+        <arg name="frame_id" value="laser_frame"/>
+        <arg name="angle_min" value="-180"/>
+        <arg name="angle_max" value="180"/>
+        <arg name="range_min" value="0.26"/>
+        <arg name="range_max" value="16.0"/>
+    </include>
+
     <!-- Odom filter -->
-    <include file="$(find eleven_bringup)/launch/includes/odom_filter.launch" />
+    <!-- <include file="$(find eleven_bringup)/launch/includes/odom_filter.launch" /> -->
 
      <!-- Laser to Odom -->
     <!-- <include file="$(find eleven_bringup)/launch/includes/laser_to_odom.launch"/> -->
+
+     <!-- ROS serial stm32f411re -->
+    <!-- <include file="$(find ancube_bringup)/launch/includes/mbed_stm32.launch">
+        <arg name="port" value="/dev/ttySTM32"/>
+        <arg name="baud" value="250000"/>
+    </include> -->
+
+    <!-- Robot base controller -->
+    <!-- <include file="$(find ancube_bringup)/launch/includes/base_controller.launch">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include> -->
+
 </launch>

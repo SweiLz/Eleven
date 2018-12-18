@@ -95,7 +95,7 @@ class BaseControl(object):
         quaternion = (msg.orientation.x, msg.orientation.y,
                       msg.orientation.z, msg.orientation.w)
         euler = tf.transformations.euler_from_quaternion(quaternion)
-        # self.pose_th = euler[2]
+        self.pose_th = euler[2]
 
     def timerCommandCB(self, event):
 
@@ -126,7 +126,7 @@ class BaseControl(object):
 
         self.pose_x += (self.trans_x * math.cos(self.pose_th)*dt)
         self.pose_y += (self.trans_x * math.sin(self.pose_th)*dt)
-        self.pose_th += (self.rotat_z * dt)
+        # self.pose_th += (self.rotat_z * dt)
 
         pose_quat = tf.transformations.quaternion_from_euler(
             0, 0, self.pose_th)
@@ -146,15 +146,19 @@ class BaseControl(object):
 
         for i in range(36):
             msg.pose.covariance[i] = 0
-        msg.pose.covariance[0] = 0.0009 #Error X
-        msg.pose.covariance[35] = 0.005 #Error Yaw
+        msg.pose.covariance[0] = 0.01 #Error X
+        msg.pose.covariance[7] = 0.01 #Error Y
+        msg.pose.covariance[14] = 99999
+        msg.pose.covariance[21] = 99999
+        msg.pose.covariance[28] = 99999
+        msg.pose.covariance[35] = 0.01 #Error Yaw
 
-        for i in range(36):
-            msg.twist.covariance[i] = 0
-        msg.twist.covariance[0] = 0.005  # speedX Co
-        msg.twist.covariance[35] = 0.01  # speedTh Cov
-
-        msg.pose.covariance = msg.twist.covariance
+        msg.twist.covariance = msg.pose.covariance
+        # for i in range(36):
+        #     msg.twist.covariance[i] = 0
+        # msg.twist.covariance[0] = 0.005  # speedX
+        # msg.twist.covariance[8] = 0.0009 # speedY
+        # msg.twist.covariance[35] = 0.01  # speedTh
         self.pub_odom.publish(msg)
 
         if self.isPubOdom:
