@@ -3,10 +3,16 @@
 
 ## Eleven robot dependencies
 ```
+$ cd ~/<catkin_ws>/
+$ rosdep install --from-paths src --ignore-src --rosdistro=melodic -y
 $ cd ~/<catkin_ws>/src
 $ git clone https://github.com/AnmanTechnology/anman_sensors.git
+$ git clone https://github.com/EAIBOT/ydlidar.git
+$ git clone https://github.com/MAPIRlab/rf2o_laser_odometry.git
 $ cd ~/<catkin_ws> && catkin_make
 ```
+
+
 ### SLAM GMAPPING
 
 this repo improve gmapping to multi-thread processing

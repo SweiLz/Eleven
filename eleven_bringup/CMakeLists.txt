@@ -9,6 +9,9 @@ project(eleven_bringup)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   rospy
+  rosserial_python
+  imu_complementary_filter
+  robot_localization
 )
 
 ## System dependencies are found with CMake's conventions

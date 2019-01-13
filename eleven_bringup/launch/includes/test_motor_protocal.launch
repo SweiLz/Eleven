@@ -2,7 +2,7 @@
 <launch>
      <!-- Robot motor controller -->
     <node pkg="eleven_bringup" type="test_motor_protocal.py" name="motor_controller" output="screen">
-        <param name="port" value="/dev/ttyUSB0"/>
+        <param name="port" value="/dev/ttyHover"/>
         <param name="baud" value="115200"/>
         
         <param name="cmd_topic" value="cmd_vel"/>
