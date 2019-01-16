@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 796
   - Class: rviz/Selection
@@ -36,7 +37,7 @@ Visualization Manager:
       Cell Size: 1
       Class: rviz/Grid
       Color: 160; 160; 164
-      Enabled: true
+      Enabled: false
       Line Style:
         Line Width: 0.029999999329447746
         Value: Lines
@@ -49,7 +50,7 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
-      Value: true
+      Value: false
     - Class: Submaps
       Enabled: true
       Fade-out distance: 1
@@ -60,115 +61,128 @@ Visualization Manager:
       Submaps:
         All: true
         Trajectory 0:
-          0.70: true
-          1.70: true
-          10.70: true
-          100.70: true
-          101.70: true
-          102.70: true
-          103.70: true
-          104.70: true
-          105.70: true
-          106.70: true
-          107.60: true
-          108.25: true
-          11.70: true
-          12.70: true
-          13.70: true
-          14.70: true
-          15.70: true
-          16.70: true
-          17.70: true
-          18.70: true
-          19.70: true
-          2.70: true
-          20.70: true
-          21.70: true
-          22.70: true
-          23.70: true
-          24.70: true
-          25.70: true
-          26.70: true
-          27.70: true
-          28.70: true
-          29.70: true
-          3.70: true
-          30.70: true
-          31.70: true
-          32.70: true
-          33.70: true
-          34.70: true
-          35.70: true
-          36.70: true
-          37.70: true
-          38.70: true
-          39.70: true
-          4.70: true
-          40.70: true
-          41.70: true
-          42.70: true
-          43.70: true
-          44.70: true
-          45.70: true
-          46.70: true
-          47.70: true
-          48.70: true
-          49.70: true
-          5.70: true
-          50.70: true
-          51.70: true
-          52.70: true
-          53.70: true
-          54.70: true
-          55.70: true
-          56.70: true
-          57.70: true
-          58.70: true
-          59.70: true
-          6.70: true
-          60.70: true
-          61.70: true
-          62.70: true
-          63.70: true
-          64.70: true
-          65.70: true
-          66.70: true
-          67.70: true
-          68.70: true
-          69.70: true
-          7.70: true
-          70.70: true
-          71.70: true
-          72.70: true
-          73.70: true
-          74.70: true
-          75.70: true
-          76.70: true
-          77.70: true
-          78.70: true
-          79.70: true
-          8.70: true
-          80.70: true
-          81.70: true
-          82.70: true
-          83.70: true
-          84.70: true
-          85.70: true
-          86.70: true
-          87.70: true
-          88.70: true
-          89.70: true
-          9.70: true
-          90.70: true
-          91.70: true
-          92.70: true
-          93.70: true
-          94.70: true
-          95.70: true
-          96.70: true
-          97.70: true
-          98.70: true
-          99.70: true
+          0.80: true
+          1.80: true
+          10.80: true
+          100.80: true
+          101.80: true
+          102.80: true
+          103.80: true
+          104.80: true
+          105.80: true
+          106.80: true
+          107.80: true
+          108.80: true
+          109.80: true
+          11.80: true
+          110.80: true
+          111.80: true
+          112.80: true
+          113.80: true
+          114.80: true
+          115.80: true
+          116.80: true
+          117.80: true
+          118.80: true
+          119.80: true
+          12.80: true
+          120.41: true
+          121.1: true
+          13.80: true
+          14.80: true
+          15.80: true
+          16.80: true
+          17.80: true
+          18.80: true
+          19.80: true
+          2.80: true
+          20.80: true
+          21.80: true
+          22.80: true
+          23.80: true
+          24.80: true
+          25.80: true
+          26.80: true
+          27.80: true
+          28.80: true
+          29.80: true
+          3.80: true
+          30.80: true
+          31.80: true
+          32.80: true
+          33.80: true
+          34.80: true
+          35.80: true
+          36.80: true
+          37.80: true
+          38.80: true
+          39.80: true
+          4.80: true
+          40.80: true
+          41.80: true
+          42.80: true
+          43.80: true
+          44.80: true
+          45.80: true
+          46.80: true
+          47.80: true
+          48.80: true
+          49.80: true
+          5.80: true
+          50.80: true
+          51.80: true
+          52.80: true
+          53.80: true
+          54.80: true
+          55.80: true
+          56.80: true
+          57.80: true
+          58.80: true
+          59.80: true
+          6.80: true
+          60.80: true
+          61.80: true
+          62.80: true
+          63.80: true
+          64.80: true
+          65.80: true
+          66.80: true
+          67.80: true
+          68.80: true
+          69.80: true
+          7.80: true
+          70.80: true
+          71.80: true
+          72.80: true
+          73.80: true
+          74.80: true
+          75.80: true
+          76.80: true
+          77.80: true
+          78.80: true
+          79.80: true
+          8.80: true
+          80.80: true
+          81.80: true
+          82.80: true
+          83.80: true
+          84.80: true
+          85.80: true
+          86.80: true
+          87.80: true
+          88.80: true
+          89.80: true
+          9.80: true
+          90.80: true
+          91.80: true
+          92.80: true
+          93.80: true
+          94.80: true
+          95.80: true
+          96.80: true
+          97.80: true
+          98.80: true
+          99.80: true
           Value: true
       Topic: /submap_list
       Tracking frame: base_link
@@ -186,12 +200,12 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 10
+      Max Intensity: 0
       Min Color: 0; 0; 0
-      Min Intensity: 10
+      Min Intensity: 0
       Name: LaserScan
       Position Transformer: XYZ
       Queue Size: 10
@@ -203,31 +217,27 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Class: rviz/TF
       Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: true
+        All Enabled: false
         base_arm:
-          Value: true
+          Value: false
         base_footprint:
           Value: true
         base_link:
-          Value: true
-        imu_frame:
-          Value: true
+          Value: false
+        imu_link:
+          Value: false
         laser_base_link:
-          Value: true
+          Value: false
         laser_frame:
-          Value: true
-        left_wheel_frame:
           Value: true
         map:
           Value: true
         odom:
-          Value: true
-        right_wheel_frame:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -241,16 +251,76 @@ Visualization Manager:
               base_link:
                 base_arm:
                   {}
-                imu_frame:
+                imu_link:
                   {}
                 laser_base_link:
                   laser_frame:
                     {}
-                left_wheel_frame:
-                  {}
-                right_wheel_frame:
-                  {}
       Update Interval: 0
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: false
+      Marker Topic: /trajectory_node_list
+      Name: MarkerArray
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: false
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: Map
+      Topic: /map
+      Unreliable: false
+      Use Timestamp: false
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 25; 255; 0
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Lines
+      Line Width: 0.029999999329447746
+      Name: Path
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic: /traject_carto
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 52; 101; 164
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Lines
+      Line Width: 0.029999999329447746
+      Name: Path
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic: /traject_odom
+      Unreliable: false
       Value: true
   Enabled: true
   Global Options:
@@ -277,33 +347,33 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 26.890832901000977
+      Distance: 58.48867416381836
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 5.673615455627441
-        Y: -10.434005737304688
-        Z: -0.05096863955259323
+        X: 8.548747062683105
+        Y: 2.4911773204803467
+        Z: 1.5802645683288574
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5497963428497314
+      Pitch: 1.5647963285446167
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.845405101776123
+      Yaw: 4.7104105949401855
     Saved: ~
 Window Geometry:
   Displays:
-    collapsed: false
+    collapsed: true
   Height: 1025
-  Hide Left Dock: false
+  Hide Left Dock: true
   Hide Right Dock: true
-  QMainWindow State: 000000ff00000000fd000000040000000000000156000003a7fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d000003a7000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000002b0fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d000002b0000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073d0000003efc0100000002fb0000000800540069006d006500000000000000073d000002eb00fffffffb0000000800540069006d00650100000000000004500000000000000000000005e1000003a700000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000040000000000000156000003a7fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073000000003d000003a7000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000003a7fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d000003a7000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073d0000003efc0100000002fb0000000800540069006d006500000000000000073d000002eb00fffffffb0000000800540069006d006501000000000000045000000000000000000000073d000003a700000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:

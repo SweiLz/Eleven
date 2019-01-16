@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-    <arg name="map_name" default="wg_map"/>
+    <arg name="map_name" default="wg_map3"/>
     <arg name="map_file" default="$(find eleven_navigation)/maps/$(arg map_name).yaml"/>
 
     <!-- Map server -->

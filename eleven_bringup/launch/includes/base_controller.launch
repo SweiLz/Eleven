@@ -11,7 +11,7 @@
         <param name="cmd_topic" value="cmd_vel"/>
         <param name="odom_topic" value="odom_wheel"/>
         <param name="odom_freq" value="50"/>
-        <param name="imu_topic" value="imu/data"/>
+        <param name="imu_topic" value="imu"/>
 
         <param name="publish_odom_frame" value="false"/>
         

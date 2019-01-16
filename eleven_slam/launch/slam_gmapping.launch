@@ -3,6 +3,7 @@
     <arg name="base_frame" default="base_footprint"/>
     <arg name="odom_frame" default="odom"/>
     <arg name="map_frame" default="map"/>
+    <arg name="map_size" value="2500"/>
 
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping">
 

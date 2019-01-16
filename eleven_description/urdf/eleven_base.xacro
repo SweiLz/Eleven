@@ -90,7 +90,7 @@
             <rosDebugLevel>na</rosDebugLevel>
             <publishWheelTF>false</publishWheelTF>
             <publishWheelJointState>false</publishWheelJointState>
-            <publishOdomTF>false</publishOdomTF>
+            <publishOdomTF>true</publishOdomTF>
             <wheelAcceleration>0</wheelAcceleration>
             <publishTf>1</publishTf>
             <odometrySource>encoder</odometrySource>

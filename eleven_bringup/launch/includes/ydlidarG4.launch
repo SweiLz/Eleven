@@ -3,8 +3,8 @@
     <!-- Lidar YDLidar G4 -->
     <arg name="port" default="/dev/ttyLidarG4"/>
     <arg name="frame_id" default="laser_frame"/>
-    <arg name="angle_min" default="-120"/>
-    <arg name="angle_max" default="120"/>
+    <arg name="angle_min" default="-180"/>
+    <arg name="angle_max" default="180"/>
     <arg name="range_min" default="0.26"/>
     <arg name="range_max" default="16.0"/>
 

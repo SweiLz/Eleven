@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <param name="use_sim_time" value="true" />
+
+    <!-- Arguments -->
+    <arg name="bag_file" default="test_cartographer.bag"/>
+    <arg name="rosbag_rate" default="1" />
+    <arg name="topic_filter" default=""/>
+
+    <!-- Playback rosbag -->
+    <node name="player" pkg="rosbag" type="play" output="screen" args="-r $(arg rosbag_rate) --clock $(arg bag_file) $(arg topic_filter)"/>
+</launch>
