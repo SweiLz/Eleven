@@ -7,4 +7,4 @@ global_costmap:
   allow_unknown: true
   resolution: 0.03
   inflation_radius: 0.75
-  cost_scaling_factor: 5.0
+  cost_scaling_factor: 7.0

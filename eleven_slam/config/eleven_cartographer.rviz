@@ -37,7 +37,7 @@ Visualization Manager:
       Cell Size: 1
       Class: rviz/Grid
       Color: 160; 160; 164
-      Enabled: false
+      Enabled: true
       Line Style:
         Line Width: 0.029999999329447746
         Value: Lines
@@ -50,7 +50,7 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
-      Value: false
+      Value: true
     - Class: Submaps
       Enabled: true
       Fade-out distance: 1
@@ -64,30 +64,8 @@ Visualization Manager:
           0.80: true
           1.80: true
           10.80: true
-          100.80: true
-          101.80: true
-          102.80: true
-          103.80: true
-          104.80: true
-          105.80: true
-          106.80: true
-          107.80: true
-          108.80: true
-          109.80: true
           11.80: true
-          110.80: true
-          111.80: true
-          112.80: true
-          113.80: true
-          114.80: true
-          115.80: true
-          116.80: true
-          117.80: true
-          118.80: true
-          119.80: true
           12.80: true
-          120.41: true
-          121.1: true
           13.80: true
           14.80: true
           15.80: true
@@ -96,93 +74,15 @@ Visualization Manager:
           18.80: true
           19.80: true
           2.80: true
-          20.80: true
-          21.80: true
-          22.80: true
-          23.80: true
-          24.80: true
-          25.80: true
-          26.80: true
-          27.80: true
-          28.80: true
-          29.80: true
+          20.70: true
+          21.30: true
           3.80: true
-          30.80: true
-          31.80: true
-          32.80: true
-          33.80: true
-          34.80: true
-          35.80: true
-          36.80: true
-          37.80: true
-          38.80: true
-          39.80: true
           4.80: true
-          40.80: true
-          41.80: true
-          42.80: true
-          43.80: true
-          44.80: true
-          45.80: true
-          46.80: true
-          47.80: true
-          48.80: true
-          49.80: true
           5.80: true
-          50.80: true
-          51.80: true
-          52.80: true
-          53.80: true
-          54.80: true
-          55.80: true
-          56.80: true
-          57.80: true
-          58.80: true
-          59.80: true
           6.80: true
-          60.80: true
-          61.80: true
-          62.80: true
-          63.80: true
-          64.80: true
-          65.80: true
-          66.80: true
-          67.80: true
-          68.80: true
-          69.80: true
           7.80: true
-          70.80: true
-          71.80: true
-          72.80: true
-          73.80: true
-          74.80: true
-          75.80: true
-          76.80: true
-          77.80: true
-          78.80: true
-          79.80: true
           8.80: true
-          80.80: true
-          81.80: true
-          82.80: true
-          83.80: true
-          84.80: true
-          85.80: true
-          86.80: true
-          87.80: true
-          88.80: true
-          89.80: true
           9.80: true
-          90.80: true
-          91.80: true
-          92.80: true
-          93.80: true
-          94.80: true
-          95.80: true
-          96.80: true
-          97.80: true
-          98.80: true
-          99.80: true
           Value: true
       Topic: /submap_list
       Tracking frame: base_link
@@ -200,7 +100,7 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 0
@@ -217,7 +117,7 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
     - Class: rviz/TF
       Enabled: true
       Frame Timeout: 15
@@ -347,16 +247,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 58.48867416381836
+      Distance: 48.56878662109375
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 8.548747062683105
-        Y: 2.4911773204803467
-        Z: 1.5802645683288574
+        X: 5.265270709991455
+        Y: -9.407410621643066
+        Z: 1.5088332891464233
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
