@@ -134,7 +134,7 @@ class PointPathManager(InteractiveMarkerServer):
         self.applyChanges()
         self.counter_points = self.counter_points+1
         rospy.loginfo("path_marker: Created point {} at {:.4f}, {:.4f}".format(
-                new_point.name, new_point.pose.position.x, new_point.pose.position.y))
+            new_point.name, new_point.pose.position.x, new_point.pose.position.y))
 
     def newPointCB_02(self, feedback):
         self.createNewPoint(0.2)
@@ -215,6 +215,8 @@ class PointPathManager(InteractiveMarkerServer):
         file_points.close()
 
     def goToPointCB(self, feedback):
+        rospy.loginfo(feedback)
+
         pass
 
     def startRouteCB(self, feedback):

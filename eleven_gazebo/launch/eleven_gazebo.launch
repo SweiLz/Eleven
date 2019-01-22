@@ -23,7 +23,7 @@
     <include file="$(find eleven_description)/launch/eleven_desc.launch"/>
     
     <!-- Robot spawn model -->
-    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-param robot_description -urdf -x 0 -y 0 -z 0.1 -model eleven" />
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" args="-param robot_description -urdf -x 0 -y 0 -z 0.1 -model eleven" />
 
     <!-- Controller -->
     <include file="$(find eleven_control)/launch/eleven_control.launch" />

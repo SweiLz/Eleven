@@ -21,6 +21,9 @@
         <arg name="map_topic" value="map_keepout" />
     </include>
 
+    <!-- Path marker -->
+    <!-- <include file="$(find eleven_navigation)/launch/includes/path_marker.launch"/> -->
+
     <!-- Rviz -->
     <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(arg rviz_config)"/>
 </launch>

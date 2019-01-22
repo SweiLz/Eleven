@@ -20,5 +20,6 @@
     <exec_depend>joint_limits_interface</exec_depend>
     <exec_depend>pluginlib</exec_depend>
     <exec_depend>transmission_interface</exec_depend>
+    <exec_depend>effort_controllers</exec_depend>
 
 </package>

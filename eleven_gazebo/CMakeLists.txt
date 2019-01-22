@@ -16,6 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
   joint_limits_interface
   pluginlib
   transmission_interface
+  effort_controllers
 )
 
 ## System dependencies are found with CMake's conventions

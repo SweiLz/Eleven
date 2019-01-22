@@ -1,6 +1,6 @@
 image: wg_map3.pgm
 resolution: 0.030000
-origin: [-20.290666, -20.758083, 0.000000]
+origin: [-20.051127, -20.811517, 0.000000]
 negate: 0
 occupied_thresh: 0.65
 free_thresh: 0.196
