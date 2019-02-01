@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <launch>
-    <!-- Lidar YDLidar G4 -->
+    <!-- Lidar YDLidar -->
     <arg name="port" default="/dev/ttyLidarG4"/>
     <arg name="frame_id" default="laser_frame"/>
     <arg name="angle_min" default="-180"/>
     <arg name="angle_max" default="180"/>
-    <arg name="range_min" default="0.26"/>
+    <arg name="range_min" default="0.08"/>
     <arg name="range_max" default="16.0"/>
 
     <node name="lidar_node" pkg="ydlidar" type="ydlidar_node" output="screen" respawn="false">
         <param name="port" type="string" value="$(arg port)"/>
         <param name="baudrate" type="int" value="115200"/>
         <param name="frame_id" type="string" value="$(arg frame_id)"/>
-        <param name="angle_fixed" type="bool" value="true"/>
         <param name="low_exposure" type="bool" value="false"/>
-        <param name="heartbeat" type="bool" value="false"/>
         <param name="resolution_fixed" type="bool" value="true"/>
+        <param name="auto_reconnect" type="bool" value="true"/>
+        <param name="reversion" type="bool" value="false"/>
         <param name="angle_min" type="double" value="$(arg angle_min)" />
         <param name="angle_max" type="double" value="$(arg angle_max)" />
         <param name="range_min" type="double" value="$(arg range_min)" />
