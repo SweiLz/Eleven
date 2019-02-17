@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<robot name="eleven_robot" 
-    xmlns:xacro="http://ros.org/wiki/xacro">
-
-    <xacro:include filename="$(find eleven_description)/urdf/eleven_base.xacro"/>
-    <xacro:include filename="$(find eleven_description)/urdf/eleven_arm.xacro"/>
-    
-</robot>

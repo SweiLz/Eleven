@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-    <!-- Localization -->
-    <node pkg="amcl" type="amcl" name="amcl" output="screen">
-        <rosparam file="$(find eleven_navigation)/config/amcl_params.yaml" command="load"/>
-        <remap from="amcl_pose" to="pose_amcl"/>
-    </node>
-</launch>

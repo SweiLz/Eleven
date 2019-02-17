@@ -7,11 +7,11 @@ import select
 import termios
 import tty
 
-MAX_LIN_VEL = 0.2
-MAX_ANG_VEL = 0.6
+MAX_LIN_VEL = 0.0
+MAX_ANG_VEL = 0.0
 
-LIN_VEL_STEP_SIZE = 0.01
-ANG_VEL_STEP_SIZE = 0.05
+LIN_VEL_STEP_SIZE = 0.0
+ANG_VEL_STEP_SIZE = 0.0
 
 msg = """
 Control Your Robot
@@ -84,11 +84,11 @@ if __name__ == "__main__":
 
     rospy.init_node('teleop_key')
     MAX_LIN_VEL = rospy.get_param('~linear_vel_max', 0.2)
-    MAX_ANG_VEL = rospy.get_param('~angular_vel_max', 0.6)
-    LIN_VEL_STEP_SIZE = rospy.get_param('~linear_vel_step', 0.01)
+    MAX_ANG_VEL = rospy.get_param('~angular_vel_max', 0.05)
+    LIN_VEL_STEP_SIZE = rospy.get_param('~linear_vel_step', 0.2)
     ANG_VEL_STEP_SIZE = rospy.get_param('~angular_vel_step', 0.05)
 
-    pub = rospy.Publisher('key_vel', Twist, queue_size=10)
+    pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
     status = 0
     target_linear_vel = 0.0
     target_angular_vel = 0.0
