@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>eleven_bringup</name>
+    <version>0.1.0</version>
+    <description>The eleven_bringup package</description>
+    <author email="sweilz.w@gmail.com">Liews Wuttipat</author>
+    <maintainer email="sweilz.w@gmail.com">Liews Wuttipat</maintainer>
+    <license>BSD</license>
+
+    <url type="repository">https://github.com/SweiLz/Eleven</url>
+    <url type="bugtracker">https://github.com/SweiLz/Eleven/issues</url>
+    <buildtool_depend>catkin</buildtool_depend>
+    <build_depend>robot_localization</build_depend>
+    <build_export_depend>robot_localization</build_export_depend>
+    <exec_depend>robot_localization</exec_depend>
+</package>

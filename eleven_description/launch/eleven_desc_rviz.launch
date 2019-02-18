@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="rviz_config" default="$(find eleven_description)/config/eleven_rviz.rviz"/>
+
+    <!-- Robot state -->
+    <include file="$(find eleven_description)/launch/eleven_desc.launch"/>
+
+    <!-- send fake joint values -->
+    <!-- <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
+        <param name="use_gui" value="true"/>
+    </node> -->
+
+    <!-- Rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(arg rviz_config)"/>
+
+</launch>

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Robot description -->
+    <!-- <include file="$(find eleven_description)/launch/eleven_desc.launch"/>
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_left_wheel" args="0 -0.23 -0.02 0 1.5707 1.5707 /base_link /left_wheel_frame 200" />
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_right_wheel" args="0 0.23 -0.02 0 1.5707 -1.5707 /base_link /right_wheel_frame 200" />
+
+ -->
+
+    <!-- Lidar G4 -->
+    <!-- <include file="$(find eleven_bringup)/launch/includes/ydlidarG4.launch">
+        <arg name="port" value="/dev/ttyLidarG4"/>
+        <arg name="frame_id" value="laser_frame"/>
+        <arg name="angle_min" value="-180"/>
+        <arg name="angle_max" value="180"/>
+        <arg name="range_min" value="0.26"/>
+        <arg name="range_max" value="16.0"/>
+    </include> -->
+
+    <!-- Odom filter -->
+    <!-- <include file="$(find eleven_bringup)/launch/includes/odom_filter.launch" /> -->
+
+    <!-- Laser to Odom -->
+    <!-- <include file="$(find eleven_bringup)/launch/includes/laser_to_odom.launch"/> -->
+
+
+    <!-- Robot base controller -->
+    <include file="$(find ancore)/launch/ancore.launch">
+        <arg name="port" value="/dev/ttySTM32"/>
+        <arg name="baudrate" value="115200"/>
+
+        <arg name="wheel_separation" value="0.49"/>
+        <arg name="wheel_radius" value="0.10"/>
+        <arg name="linear_min" value="-0.5"/>
+        <arg name="linear_max" value="0.5"/>
+        <arg name="angular_min" value="-0.5"/>
+        <arg name="angular_max" value="0.5"/>
+
+        <arg name="publish_odom_frame" value="true"/>
+
+        <arg name="imu_frame_id" value="imu_link"/>
+        <arg name="imu_topic" value="imu"/>
+        <arg name="odom_frame_id" value="odom"/>
+        <arg name="odom_topic" value="odom"/>
+        <arg name="base_frame_id" value="base_footprint"/>
+        <arg name="cmd_topic" value="cmd_vel"/>
+    </include>
+
+
+</launch>
