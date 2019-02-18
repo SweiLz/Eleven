@@ -1,28 +1,41 @@
 <?xml version="1.0"?>
 <launch>
     <!-- Robot description -->
-    <!-- <include file="$(find eleven_description)/launch/eleven_desc.launch"/>
-    <node pkg="tf" type="static_transform_publisher" name="base_link_to_left_wheel" args="0 -0.23 -0.02 0 1.5707 1.5707 /base_link /left_wheel_frame 200" />
-    <node pkg="tf" type="static_transform_publisher" name="base_link_to_right_wheel" args="0 0.23 -0.02 0 1.5707 -1.5707 /base_link /right_wheel_frame 200" />
+    <include file="$(find eleven_description)/launch/eleven_desc.launch"/>
+    <!-- <node pkg="tf" type="static_transform_publisher" name="base_link_to_left_wheel" args="0 -0.23 -0.02 0 1.5707 1.5707 /base_link /left_wheel_frame 200" />
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_right_wheel" args="0 0.23 -0.02 0 1.5707 -1.5707 /base_link /right_wheel_frame 200" /> -->
 
- -->
+
 
     <!-- Lidar G4 -->
-    <!-- <include file="$(find eleven_bringup)/launch/includes/ydlidarG4.launch">
+    <include file="$(find eleven_bringup)/launch/includes/ydlidar.launch">
         <arg name="port" value="/dev/ttyLidarG4"/>
         <arg name="frame_id" value="laser_frame"/>
-        <arg name="angle_min" value="-180"/>
-        <arg name="angle_max" value="180"/>
+        <arg name="angle_min" value="-165"/>
+        <arg name="angle_max" value="165"/>
         <arg name="range_min" value="0.26"/>
         <arg name="range_max" value="16.0"/>
-    </include> -->
+    </include>
 
     <!-- Odom filter -->
-    <!-- <include file="$(find eleven_bringup)/launch/includes/odom_filter.launch" /> -->
+    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_loc_odom" clear_params="true">
+        <rosparam command="load" file="$(find eleven_bringup)/config/ekf_loc_con_params.yaml" />
+        <remap from="odometry/filtered" to="odom"/>
+    </node>
 
-    <!-- Laser to Odom -->
-    <!-- <include file="$(find eleven_bringup)/launch/includes/laser_to_odom.launch"/> -->
+    <!-- Laser to Odom RF2O-->
+    <node pkg="rf2o_laser_odometry" type="rf2o_laser_odometry_node" name="laser_to_odom_node" output="screen">
+        <param name="laser_scan_topic" value="/scan"/>
+        <param name="base_frame_id" value="base_footprint"/>
+        <param name="odom_frame_id" value="odom"/>
+        <param name="freq" value="11"/>
+        <param name="odom_topic" value="/odom_rf2o"/>
 
+        <param name="verbose" value="true"/>
+        <param name="init_pose_from_topic" value=""/>
+        <param name="publish_tf" value="false"/>
+        <!-- <remap from="/laser_to_odom_node/odom" to="/odom_rf2o"/> -->
+    </node>
 
     <!-- Robot base controller -->
     <include file="$(find ancore)/launch/ancore.launch">
@@ -36,15 +49,17 @@
         <arg name="angular_min" value="-0.5"/>
         <arg name="angular_max" value="0.5"/>
 
-        <arg name="publish_odom_frame" value="true"/>
+        <arg name="publish_odom_frame" value="false"/>
 
         <arg name="imu_frame_id" value="imu_link"/>
         <arg name="imu_topic" value="imu"/>
         <arg name="odom_frame_id" value="odom"/>
-        <arg name="odom_topic" value="odom"/>
+        <arg name="odom_topic" value="odom_wheel"/>
         <arg name="base_frame_id" value="base_footprint"/>
         <arg name="cmd_topic" value="cmd_vel"/>
     </include>
 
+    <!-- Twist Mux -->
+    <include file="$(find eleven_teleop)/launch/eleven_twistmux.launch" />
 
 </launch>
