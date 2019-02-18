@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="robot_name"/>
+    <arg name="pbstream_name"/>
+    <arg name="resolution" default="0.03"/>
+    
+
+    <arg name="configuration_directory" default="$(find ancube_description)/robot/$(arg robot_name)/config"/>
+    <arg name="configuration_basename" default="$(arg robot_name)_localization.lua"/>
+    <arg name="pbstream_file" default="$(find ancube_bags)/bags/$(arg pbstream_name).pbstream"/>
+
+    <node pkg="cartographer_ros" type="cartographer_node" name="cartographer_node" args="  
+        -configuration_directory $(arg configuration_directory)
+        -configuration_basename $(arg configuration_basename)
+        -load_state_filename $(arg pbstream_file)" output="screen"/>
+
+    <node pkg="cartographer_ros" type="cartographer_occupancy_grid_node" name="cartographer_occupancy_grid_node" args="-resolution $(arg resolution)"/>
+
+</launch>

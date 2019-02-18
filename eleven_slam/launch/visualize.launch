@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="rviz_config" default="$(find eleven_slam)/config/visualize.rviz"/>
+
+    <!-- Rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(arg rviz_config)"/>
+
+</launch>

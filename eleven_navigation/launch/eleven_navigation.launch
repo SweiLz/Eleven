@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="map_name"/>
+
+
+    <arg name="map_nav_file" default="$(find eleven_navigation)/maps/$(arg map_name).yaml"/>
+
+    <!-- Map server -->
+    <node pkg="map_server" name="map_nav_server" type="map_server" args="$(arg map_nav_file)">
+        <param name="frame_id" value="map"/>
+        <remap from="map" to="map_nav" />
+        <remap from="static_map" to="static_map_nav" />
+    </node>
+
+    <!-- Navigation move_base -->
+    <node pkg="move_base" type="move_base" name="move_base" respawn="false" output="screen" clear_params="true">
+        <!-- <rosparam file="$(find eleven_navigation)/config/movebase/move_base_params.yaml" command="load"/> -->
+        <rosparam file="$(find eleven_navigation)/config/movebase/costmap_common_params.yaml" command="load" ns="global_costmap"/>
+        <rosparam file="$(find eleven_navigation)/config/movebase/costmap_common_params.yaml" command="load" ns="local_costmap"/>
+        <rosparam file="$(find eleven_navigation)/config/movebase/local_costmap_params.yaml" command="load"/>
+        <rosparam file="$(find eleven_navigation)/config/movebase/global_costmap_params.yaml" command="load"/>
+        <!-- <rosparam file="$(find eleven_navigation)/config/movebase/teb_local_planner_params.yaml" command="load"/> -->
+        <!-- <rosparam file="$(find eleven_navigation)/config/movebase/base_local_planner_params.yaml" command="load"/> -->
+        <rosparam file="$(find eleven_navigation)/config/movebase/dwa_local_planner_params.yaml" command="load"/>
+        <remap from="cmd_vel" to="nav_vel"/>
+        <remap from="odom" to="odom"/>
+        <remap from="map" to="map_nav" />
+    </node>
+
+</launch>

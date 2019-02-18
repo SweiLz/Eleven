@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="move_basic" type="move_basic" name="move_basic_node">
+        <param name="min_angular_velocity" value="0.05"/>
+        <param name="max_angular_velocity" value="1.0"/>
+        <param name="angular_acceleration" value="0.3"/>
+        <param name="angular_tolerance" value="0.1"/>
+
+        <param name="min_linear_velocity" value="0.1"/>
+        <param name="max_linear_velocity" value="0.5"/>
+        <param name="linear_acceleration" value="0.25"/>
+        <param name="linear_tolerance" value="0.1"/>
+
+        <param name="localization_latency" value="0.3"/>
+        <param name="rotation_attempts" value="1"/>
+
+        <param name="obstacle_wait_limit" value="2.0"/>
+
+        <remap from="cmd_vel" to="nav_vel"/>
+
+    </node>
+</launch>

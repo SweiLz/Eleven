@@ -18,24 +18,23 @@
     </include>
 
     <!-- Odom filter -->
-    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_loc_odom" clear_params="true">
+    <!-- <node pkg="robot_localization" type="ekf_localization_node" name="ekf_loc_odom" clear_params="true">
         <rosparam command="load" file="$(find eleven_bringup)/config/ekf_loc_con_params.yaml" />
         <remap from="odometry/filtered" to="odom"/>
-    </node>
+    </node> -->
 
     <!-- Laser to Odom RF2O-->
-    <node pkg="rf2o_laser_odometry" type="rf2o_laser_odometry_node" name="laser_to_odom_node" output="screen">
+    <!-- <node pkg="rf2o_laser_odometry" type="rf2o_laser_odometry_node" name="laser_to_odom_node" output="screen">
         <param name="laser_scan_topic" value="/scan"/>
         <param name="base_frame_id" value="base_footprint"/>
         <param name="odom_frame_id" value="odom"/>
-        <param name="freq" value="11"/>
+        <param name="freq" value="10"/>
         <param name="odom_topic" value="/odom_rf2o"/>
 
         <param name="verbose" value="true"/>
         <param name="init_pose_from_topic" value=""/>
         <param name="publish_tf" value="false"/>
-        <!-- <remap from="/laser_to_odom_node/odom" to="/odom_rf2o"/> -->
-    </node>
+    </node> -->
 
     <!-- Robot base controller -->
     <include file="$(find ancore)/launch/ancore.launch">

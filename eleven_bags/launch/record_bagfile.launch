@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="topic" default="-a"/>
+    <arg name="name"/>
+    <arg name="name_node" default="record_$(arg name)"/>
+
+    <node pkg="rosbag" type="record" name="$(arg name_node)" args="-O $(find eleven_bags)/bags/$(arg name).bag $(arg topic)" output="screen"/>
+</launch>

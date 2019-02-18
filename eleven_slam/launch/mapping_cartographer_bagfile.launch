@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- rosrun xacro xacro model.xacro > model.urdf -->
+
+
+
+    <arg name="resolution" default="0.03"/>
+
+    <arg name="configuration_directory" default="$(find eleven_description)/config"/>
+    <arg name="configuration_basename" default="eleven_robot.lua"/>
+
+    <node pkg="cartographer_ros" type="cartographer_occupancy_grid_node" name="cartographer_occupancy_grid_node" args="-resolution $(arg resolution)"/>
+    <!-- Arguments -->
+    <!-- <arg name="bag_name"/>
+    <arg name="bag_file" default="$(find eleven_bags)/bags/$(arg bag_name)"/>
+    <node pkg="cartographer_ros" type="cartographer_offline_node" name="cartographer_node" args="
+        -configuration_directory $(arg configuration_directory)
+        -configuration_basenames $(arg configuration_basename)
+        -urdf_filenames $(find eleven_description)/urdf/eleven_base.urdf
+        -bag_filenames $(arg bag_file)
+        -keep_running true
+        -skip_seconds 3
+        " output="screen">
+    </node> -->
+
+    <arg name="bag_path" default="$(find eleven_bags)/bags"/>
+    <!-- 2 Bags file -->
+    <node pkg="cartographer_ros" type="cartographer_offline_node" name="cartographer_node" args="
+        -configuration_directory $(arg configuration_directory)
+        -configuration_basenames $(arg configuration_basename)
+        -urdf_filenames $(find eleven_description)/urdf/eleven_base.urdf
+        -bag_filenames $(arg bag_path)/fibo_f5.bag,$(arg bag_path)/fibo_f5_1.bag,$(arg bag_path)/fibo_f5_2.bag
+        -keep_running true
+        -skip_seconds 3
+        " output="screen">
+    </node>
+
+    <!-- With Old State -->
+    <!-- <node pkg="cartographer_ros" type="cartographer_offline_node" name="cartographer_node" args="
+        -configuration_directory $(arg configuration_directory)
+        -configuration_basenames $(arg configuration_basename)
+        -urdf_filenames $(find ancube_description)/robot/$(arg robot_name)/model.urdf
+        -bag_filenames $(arg bag_file)
+        -load_state_filename $(find ancube_bags)/bags/fibo_f5_0.bag.pbstream
+        -keep_running true
+        -skip_seconds 3
+       " output="screen">
+    </node> -->
+
+</launch>
