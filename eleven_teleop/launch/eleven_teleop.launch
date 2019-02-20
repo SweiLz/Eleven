@@ -3,9 +3,9 @@
     <!-- Teleop key node -->
     <include file="$(find eleven_teleop)/launch/includes/teleop_key.launch">
         <arg name="cmd_topic" value="key_vel"/>
-        <arg name="linear_vel_max" value="0.85"/>
+        <arg name="linear_vel_max" value="3.85"/>
         <arg name="linear_vel_step" value="0.05"/>
-        <arg name="angular_vel_max" value="0.80"/>
-        <arg name="angular_vel_step" value="0.10"/>
+        <arg name="angular_vel_max" value="3.80"/>
+        <arg name="angular_vel_step" value="0.05"/>
     </include>
 </launch>
