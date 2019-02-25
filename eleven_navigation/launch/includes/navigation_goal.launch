@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="eleven_navigation" type="navigation_goals" name="navigation_goals_node" output="screen">
+        <rosparam file="$(find eleven_navigation)/config/point_map.yaml" command="load"/>
+    </node>
+</launch>

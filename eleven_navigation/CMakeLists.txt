@@ -7,7 +7,12 @@ project(eleven_navigation)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED COMPONENTS
+    actionlib
+    move_base_msgs
+    roscpp
+    eleven_msgs
+)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -52,6 +57,7 @@ find_package(catkin REQUIRED)
 ## Generate services in the 'srv' folder
 # add_service_files(
 #   FILES
+    # navigationCommand.srv
 #   Service1.srv
 #   Service2.srv
 # )
@@ -113,7 +119,8 @@ catkin_package(
 ## Your package locations should be listed before other locations
 include_directories(
 # include
-# ${catkin_INCLUDE_DIRS}
+    ${catkin_INCLUDE_DIRS}
+    ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
 )
 
 ## Declare a C++ library
@@ -193,3 +200,10 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+add_executable(navigation_goals
+  src/navigation_goals.cpp
+)
+add_dependencies(navigation_goals ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(navigation_goals
+  ${catkin_LIBRARIES}
+)

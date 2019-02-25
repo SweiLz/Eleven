@@ -12,6 +12,11 @@ topics:
   timeout : 0.5
   priority: 10
 -
+  name    : chin_control
+  topic   : chin_vel
+  timeout : 0.5
+  priority: 20
+-
   name    : keyboard
   topic   : key_vel
   timeout : 0.5

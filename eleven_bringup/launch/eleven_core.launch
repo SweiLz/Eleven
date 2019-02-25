@@ -5,8 +5,6 @@
     <!-- <node pkg="tf" type="static_transform_publisher" name="base_link_to_left_wheel" args="0 -0.23 -0.02 0 1.5707 1.5707 /base_link /left_wheel_frame 200" />
     <node pkg="tf" type="static_transform_publisher" name="base_link_to_right_wheel" args="0 0.23 -0.02 0 1.5707 -1.5707 /base_link /right_wheel_frame 200" /> -->
 
-
-
     <!-- Lidar G4 -->
     <include file="$(find eleven_bringup)/launch/includes/ydlidar.launch">
         <arg name="port" value="/dev/ttyLidarG4"/>
@@ -24,7 +22,7 @@
     </node> -->
 
     <!-- Laser to Odom RF2O-->
-    <!-- <node pkg="rf2o_laser_odometry" type="rf2o_laser_odometry_node" name="laser_to_odom_node" output="screen">
+    <!-- <node pkg="rf2o_laser_odometry" type="rf2o_laser_odometry_node" name="laser_to_odom_node">
         <param name="laser_scan_topic" value="/scan"/>
         <param name="base_frame_id" value="base_footprint"/>
         <param name="odom_frame_id" value="odom"/>
@@ -52,8 +50,9 @@
 
         <arg name="imu_frame_id" value="imu_link"/>
         <arg name="imu_topic" value="imu"/>
+        <arg name="altitude_topic" value="altitude"/>
         <arg name="odom_frame_id" value="odom"/>
-        <arg name="odom_topic" value="odom"/>
+        <arg name="odom_topic" value="odom_wheel"/>
         <arg name="base_frame_id" value="base_footprint"/>
         <arg name="cmd_topic" value="cmd_vel"/>
     </include>

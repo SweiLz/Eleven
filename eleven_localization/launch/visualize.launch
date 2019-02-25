@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <launch>
-    <arg name="rviz_config" default="$(find eleven_localization)/config/visualize.rviz"/>
+    <arg name="type" default="amcl"/>
+    <arg name="rviz_config" default="$(find eleven_localization)/config/visualize_$(arg type).rviz"/>
 
     <!-- Rviz -->
     <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(arg rviz_config)"/>

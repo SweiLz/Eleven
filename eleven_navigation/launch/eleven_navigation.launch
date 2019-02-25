@@ -23,8 +23,7 @@
         <remap from="cmd_vel" to="nav_vel"/>
         <remap from="odom" to="odom"/>
         <remap from="map" to="map_nav" />
-        <!-- <param name="move_base/DWAPlannerROS/yaw_goal_tolerance" value="0.5"/>
-        <param name="move_base/DWAPlannerROS/xy_goal_tolerance" value="0.25"/> -->
+
     </node>
 
 </launch>

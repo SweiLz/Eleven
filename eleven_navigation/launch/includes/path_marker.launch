@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="map_name"/>
+
+
+    <arg name="map_nav_file" default="$(find eleven_navigation)/maps/$(arg map_name).yaml"/>
+
+    <!-- Map server -->
+    <node pkg="map_server" name="map_nav_server" type="map_server" args="$(arg map_nav_file)">
+        <param name="frame_id" value="map"/>
+        <remap from="map" to="map_nav" />
+        <remap from="static_map" to="static_map_nav" />
+    </node>
+    <!-- Path marker -->
+    <node pkg="eleven_navigation" type="path_marker.py" name="path_marker" output="screen">
+        <param name="frame_id" value="map"/>
+    </node>
+    <!-- Rviz -->
+    <arg name="rviz_config" default="$(find eleven_navigation)/config/pathmarker_rviz.rviz"/>
+    <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(arg rviz_config)"/>
+</launch>

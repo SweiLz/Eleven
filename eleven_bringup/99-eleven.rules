@@ -1,6 +1,6 @@
 #http://www.reactivated.net/writing_udev_rules.html
 
-#sudo cp 99-ancube.rules /etc/udev/rules.d/
+#sudo cp 99-eleven.rules /etc/udev/rules.d/
 #sudo udevadm control --reload-rules
 #sudo udevadm trigger
 
@@ -11,3 +11,9 @@ KERNEL=="ttyACM*", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374b", MODE:="077
 # YDLidar X4,G4
 KERNEL=="ttyUSB*", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", GROUP:="dialout", MODE:="0777", SYMLINK="ttyLidarX4"
 KERNEL=="ttyACM*", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", GROUP:="dialout", MODE:="0777", SYMLINK="ttyLidarG4"
+
+# Realsense
+KERNEL=="ttyACM*", ATTRS{idVendor}=="8086", ATTRS{idProduct}=="0b07", GROUP:="dialout", MODE:="0777", SYMLINK="ttyRS"
+
+# Arm
+KERNEL=="ttyUSB*", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", GROUP:="dialout", MODE:="0777", SYMLINK="ttyArm"

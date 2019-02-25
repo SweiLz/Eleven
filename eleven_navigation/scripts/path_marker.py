@@ -4,15 +4,16 @@ import os
 
 import roslib
 import rospkg
+
 import rospy
-from geometry_msgs.msg import Pose2D
+# from geometry_msgs.msg import Pose2D
 from interactive_markers.interactive_marker_server import *
 from interactive_markers.menu_handler import *
 from visualization_msgs.msg import (InteractiveMarker,
                                     InteractiveMarkerControl, Marker)
 
-from ancube_msgs.msg import Path2D
-from ancube_msgs.srv import *
+# from ancube_msgs.msg import Path2D
+# from ancube_msgs.srv import *
 
 
 roslib.load_manifest("interactive_markers")
@@ -62,8 +63,6 @@ class PointPath(InteractiveMarker):
         # self.marker_control.name = "rotate_x"
         #     self.marker_control.interaction_mode = InteractiveMarkerControl.MOVE_ROTATE
         # self.controls.append(self.marker_control)
-
-        
 
     def processFeedback(self, feedback):
         self.pose = feedback.pose
@@ -118,14 +117,14 @@ class PointPathManager(InteractiveMarkerServer):
 
         rp = rospkg.RosPack()
         self.points_file_path = os.path.join(rp.get_path(
-            "ancube_navigation"), "config", "waypoint.txt")
+            "eleven_navigation"), "config", "waypoint.txt")
 
-        rospy.wait_for_service('move_to')
-        try:
-            self.serMoveTo = rospy.ServiceProxy('move_to', moveTo)
-            rospy.loginfo("service bind")
-        except rospy.ServiceException:
-            pass
+        # rospy.wait_for_service('move_to')
+        # try:
+        #     self.serMoveTo = rospy.ServiceProxy('move_to', moveTo)
+        #     rospy.loginfo("service bind")
+        # except rospy.ServiceException:
+        #     pass
 
     def createNewPoint(self, speed=0.2):
         name = "p{}".format(self.counter_points)
@@ -228,24 +227,26 @@ class PointPathManager(InteractiveMarkerServer):
         file_points.close()
 
     def goToPointCB(self, feedback):
+        pass
         # rospy.loginfo(feedback)
-        goTo = Pose2D(feedback.pose.position.x, feedback.pose.position.y, 0.0)
+        # goTo = Pose2D(feedback.pose.position.x, feedback.pose.position.y, 0.0)
 
-        self.serMoveTo(goTo)
-        
+        # self.serMoveTo(goTo)
 
     def startRouteCB(self, feedback):
-        for i in self.list_of_points:
-            goTo = Pose2D(i.pose.position.x, i.pose.position.y, 0.0)
-            self.serMoveTo(goTo)
+        pass
+        # for i in self.list_of_points:
+        #     goTo = Pose2D(i.pose.position.x, i.pose.position.y, 0.0)
+        #     self.serMoveTo(goTo)
 
     def stopRouteCB(self, feedback):
         pass
 
     def reverseRouteCB(self, feedback):
-        for i in reversed(self.list_of_points):
-            goTo = Pose2D(i.pose.position.x, i.pose.position.y, 0.0)
-            self.serMoveTo(goTo)
+        pass
+        # for i in reversed(self.list_of_points):
+        #     goTo = Pose2D(i.pose.position.x, i.pose.position.y, 0.0)
+        #     self.serMoveTo(goTo)
 
 
 if __name__ == "__main__":

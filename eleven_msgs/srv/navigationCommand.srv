@@ -1,0 +1,3 @@
+int16 instruction  ## 0 := get in elevator room 1:= get out..
+---
+bool status

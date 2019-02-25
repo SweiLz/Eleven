@@ -1,27 +1,32 @@
 <?xml version="1.0"?>
 <launch>
-
-    <arg name="pbstream_name"/>
+    <arg name="map_name"/>
     <arg name="resolution" default="0.03"/>
 
 
-    <!-- <arg name="map_name"/> -->
-
-    <!-- Map server -->
-    <!-- <include file="$(find ancube_localization)/launch/includes/map_server.launch">
-        <arg name="map_name" value="$(arg map_name)"/>
-    </include> -->
-
-    <!-- Localization -->
+    <!-- Localization Pure Localization-->
     <arg name="configuration_directory" default="$(find eleven_description)/config"/>
     <arg name="configuration_basename" default="eleven_localization.lua"/>
-    <arg name="pbstream_file" default="$(find eleven_localization)/maps/$(arg pbstream_name).bag.pbstream"/>
-
+    <arg name="pbstream_file" default="$(find eleven_localization)/maps/$(arg map_name).bag.pbstream"/>
     <node pkg="cartographer_ros" type="cartographer_node" name="cartographer_node" args="  
         -configuration_directory $(arg configuration_directory)
         -configuration_basename $(arg configuration_basename)
-        -load_state_filename $(arg pbstream_file)" output="screen"/>
-
+        -load_state_filename $(arg pbstream_file)" output="screen" clear_params="true"/>
     <node pkg="cartographer_ros" type="cartographer_occupancy_grid_node" name="cartographer_occupancy_grid_node" args="-resolution $(arg resolution)"/>
+
+
+
+    <!-- 
+    <arg name="map_loc_file" default="$(find eleven_localization)/maps/$(arg map_name).yaml"/> -->
+
+    <!-- Map server -->
+    <!-- <node pkg="map_server" name="map_loc_server" type="map_server" args="$(arg map_loc_file)">
+        <param name="frame_id" value="map"/>
+        <remap from="map" to="map_loc" />
+        <remap from="static_map" to="static_map_loc" />
+    </node> -->
+
+    <!-- Localization AMCL -->
+    <!-- <include file="$(find eleven_localization)/launch/includes/amcl.launch"/> -->
 
 </launch>

@@ -1,7 +1,7 @@
-obstacle_range: 2.5
+obstacle_range: 5.5
 raytrace_range: 3.0
 footprint: [[-0.15,-0.25],[-0.15,0.25],[0.45,0.26],[0.53,0],[0.45,-0.26]]
-footprint_padding: 0.05
+footprint_padding: 0.15
 
 observation_sources: laser_scan_sensor #point_cloud_sensor
 

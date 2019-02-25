@@ -1,0 +1,48 @@
+use_map_topic: true
+tf_broadcast: true
+first_map_only: true
+
+odom_frame_id: "odom"
+base_frame_id: "base_footprint"
+global_frame_id: "map"
+
+odom_model_type: "diff-corrected"
+
+
+gui_publish_rate: 5.0
+
+update_min_d: 0.03
+update_min_a: 0.01
+
+# recovery_alpha_slow: 0.01
+# recovery_alpha_fast: 0.1
+
+
+laser_model_type: "likelihood_field"
+
+laser_min_range: 0.26
+laser_max_range: 16.0
+laser_max_beams: 30
+
+min_particles: 1000
+max_particles: 5000
+
+kld_err: 0.05
+kld_z: 0.99
+
+odom_alpha1: 0.01
+odom_alpha2: 0.01
+odom_alpha3: 0.01
+odom_alpha4: 0.01
+odom_alpha5: 0.01
+
+transform_tolerance: 0.2
+resample_interval: 2
+
+
+
+
+
+
+
+

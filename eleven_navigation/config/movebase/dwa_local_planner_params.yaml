@@ -1,0 +1,59 @@
+# http://wiki.ros.org/dwa_local_planner
+DWAPlannerROS:
+
+# Robot Configuration Parameters
+  # The absolute value of the maximum translational velocity for the robot in m/s
+  max_vel_trans: 0.4
+  # The absolute value of the minimum translational velocity for the robot in m/s
+  min_vel_trans: 0.1
+
+  # The maximum x velocity for the robot in m/s.
+  max_vel_x: 0.4
+  # The minimum x velocity for the robot in m/s, negative for backwards motion. 
+  min_vel_x: -0.15
+
+  max_vel_y: 0.0
+  min_vel_y: 0.0
+
+  # The absolute value of the maximum rotational velocity for the robot in rad/s 
+  max_vel_theta: 0.5
+  # The absolute value of the minimum rotational velocity for the robot in rad/s 
+  min_vel_theta: 0.1
+
+  # The xy acceleration limit of the robot in meters/sec^2 
+  acc_lim_x: 0.15
+  # acc_lim_y: 0.0
+
+#   # The rotational acceleration limit of the robot in radians/sec^2 
+#   acc_lim_theta: 1.2
+
+#   # The translational acceleration limit of the robot in meters/sec^2 
+  acc_lim_trans: 0.25
+
+# Goal Tolerance Parameter
+  # The tolerance in meters for the controller in the x & y distance when achieving a goal 
+  xy_goal_tolerance: 0.3
+
+  # The tolerance in radians for the controller in yaw/rotation when achieving its goal 
+  yaw_goal_tolerance: 0.5
+
+  # trans_stopped_vel: 0.1
+  # theta_stopped_vel: 0.1
+
+# Forward Simulation Parameters
+  # The amount of time to forward-simulate trajectories in seconds 
+  sim_time: 5.0
+  # # The step size, in meters, to check collisions on a given trajectory 
+  # sim_granularity: 0.025
+  # # The step size, in radians, to check collisions on a given trajectory 
+  # angular_sim_granularity: 0.1
+
+  path_distance_bias: 1.0
+  goal_distance_bias: 0.6
+
+  # stop_time_buffer: 0.325
+
+  vx_samples: 20
+  vy_samples: 0
+  vtheta_samples: 40
+

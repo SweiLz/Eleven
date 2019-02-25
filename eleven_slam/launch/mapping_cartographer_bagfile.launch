@@ -11,7 +11,7 @@
 
     <node pkg="cartographer_ros" type="cartographer_occupancy_grid_node" name="cartographer_occupancy_grid_node" args="-resolution $(arg resolution)"/>
     <!-- Arguments -->
-    <!-- <arg name="bag_name"/>
+     <arg name="bag_name"/>
     <arg name="bag_file" default="$(find eleven_bags)/bags/$(arg bag_name)"/>
     <node pkg="cartographer_ros" type="cartographer_offline_node" name="cartographer_node" args="
         -configuration_directory $(arg configuration_directory)
@@ -21,10 +21,11 @@
         -keep_running true
         -skip_seconds 3
         " output="screen">
-    </node> -->
-
+    </node> 
+ <!-- 2 Bags file -->
+<!--
     <arg name="bag_path" default="$(find eleven_bags)/bags"/>
-    <!-- 2 Bags file -->
+   
     <node pkg="cartographer_ros" type="cartographer_offline_node" name="cartographer_node" args="
         -configuration_directory $(arg configuration_directory)
         -configuration_basenames $(arg configuration_basename)
@@ -33,7 +34,7 @@
         -keep_running true
         -skip_seconds 3
         " output="screen">
-    </node>
+    </node>-->
 
     <!-- With Old State -->
     <!-- <node pkg="cartographer_ros" type="cartographer_offline_node" name="cartographer_node" args="
