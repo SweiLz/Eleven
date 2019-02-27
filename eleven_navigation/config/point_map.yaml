@@ -1,4 +1,9 @@
 point_map:
+
+  - id: "0"
+    name: "F2 elevator_room"
+    pose: [3.8250, 6.1501, 2.1595]
+
   - id: "10"
     name: "F1 elevator_room"
     pose: [2.653, 9.465, 0.0]
@@ -18,3 +23,11 @@ point_map:
   - id: "14"
     name: "F1 waiting_area_out"
     pose: [4.9786, 3.7404, 0.0]
+
+  - id: "20"
+    name: "F2 elevator_room"
+    pose: [3.0054, 9.5729, -2.737]
+  
+  - id: "21"
+    name: "F2 elevator_right"
+    pose: [5.1776, 9.0979, 2.1595]

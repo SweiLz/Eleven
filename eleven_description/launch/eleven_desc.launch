@@ -9,4 +9,9 @@
         <param name="publish_frequency" value="50"/>
         <param name="use_tf_static" value="true"/>
     </node>
+
+    <!-- <node pkg="tf" type="static_transform_publisher" name="map_to_base_footprint" args="0 0 0 0 0 0 /map /base_footprint 200" /> -->
+
+
+
 </launch>

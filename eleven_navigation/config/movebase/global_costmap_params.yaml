@@ -13,3 +13,5 @@ global_costmap:
   cost_scaling_factor: 3.0
   inflate_unknown: true
   
+  obstacle_layer:
+    enabled: false

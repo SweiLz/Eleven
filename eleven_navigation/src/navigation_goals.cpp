@@ -77,9 +77,9 @@ bool goto_point(eleven_msgs::navigationCommand::Request &req, eleven_msgs::navig
         goal.target_pose.pose.orientation = tf::createQuaternionMsgFromYaw(pt.pose.theta);
 
         ROS_INFO("Sending goal");
-        ac->sendGoal(goal);
+        // ac->sendGoal(goal);
 
-        // ac->sendGoalAndWait(goal);
+        ac->sendGoalAndWait(goal);
     }
     // ros::Duration(5.0).sleep();
 

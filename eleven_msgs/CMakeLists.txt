@@ -55,6 +55,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_service_files(
   FILES
   navigationCommand.srv
+  changeFloor.srv
 #   Service1.srv
 #   Service2.srv
 )

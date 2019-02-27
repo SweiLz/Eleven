@@ -21,7 +21,7 @@
         <rosparam file="$(find eleven_navigation)/config/movebase/base_local_planner_params.yaml" command="load" />
 
         <remap from="cmd_vel" to="nav_vel"/>
-        <remap from="odom" to="odom"/>
+        <remap from="odom" to="odom_wheel"/>
         <remap from="map" to="map_nav" />
 
     </node>
