@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="floor"/>
+
+    <!-- Lidar G4 -->
+    <include file="$(find eleven_bringup)/launch/includes/ydlidar.launch"/>
+
+    <!-- Bag scan -->
+    <node pkg="rosbag" type="record" name="record_scan" args="-O $(find eleven_bags)/bags/fibo_f$(arg floor).bag /scan"/>
+</launch>

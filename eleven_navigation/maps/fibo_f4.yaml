@@ -1,6 +1,6 @@
-image: fibo_f5.pgm
+image: fibo_f4.pgm
 resolution: 0.030000
-origin: [-22.449058, -10.600470, 0.000000]
+origin: [-6.862535, -15.750804, 0.000000]
 negate: 0
 occupied_thresh: 0.65
 free_thresh: 0.196

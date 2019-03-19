@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <launch>
     <arg name="map_name"/>
-    <!-- <arg name="resolution" default="0.03"/> -->
-
 
     <!-- Localization Pure Localization-->
     <arg name="configuration_directory" default="$(find eleven_description)/config"/>

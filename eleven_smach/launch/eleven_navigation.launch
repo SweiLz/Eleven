@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+
+    <include file="$(find eleven_bringup)/launch/eleven_core.launch" />
+
+    <node pkg="eleven_smach" name="eleven_map_manager" type="eleven_manager.py" output="screen"/>
+
+
+    <!-- Navigation move_base -->
+    <node pkg="move_base" type="move_base" name="move_base" respawn="false" output="screen" clear_params="true">
+        <rosparam file="$(find eleven_navigation)/config/movebase/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find eleven_navigation)/config/movebase/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find eleven_navigation)/config/movebase/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find eleven_navigation)/config/movebase/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find eleven_navigation)/config/movebase/base_local_planner_params.yaml" command="load" />
+
+        <remap from="cmd_vel" to="nav_vel"/>
+        <remap from="odom" to="odom_wheel"/>
+        <remap from="map" to="map_nav" />
+
+    </node>
+
+
+</launch>

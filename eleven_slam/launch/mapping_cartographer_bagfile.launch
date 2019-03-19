@@ -2,16 +2,14 @@
 <launch>
     <!-- rosrun xacro xacro model.xacro > model.urdf -->
 
-
-
     <arg name="resolution" default="0.03"/>
 
-    <arg name="configuration_directory" default="$(find eleven_description)/config"/>
+    <arg name="configuration_directory" default="$(find eleven_slam)/config"/>
     <arg name="configuration_basename" default="eleven_robot.lua"/>
 
     <node pkg="cartographer_ros" type="cartographer_occupancy_grid_node" name="cartographer_occupancy_grid_node" args="-resolution $(arg resolution)"/>
     <!-- Arguments -->
-     <arg name="bag_name"/>
+    <arg name="bag_name"/>
     <arg name="bag_file" default="$(find eleven_bags)/bags/$(arg bag_name)"/>
     <node pkg="cartographer_ros" type="cartographer_offline_node" name="cartographer_node" args="
         -configuration_directory $(arg configuration_directory)
@@ -19,11 +17,11 @@
         -urdf_filenames $(find eleven_description)/urdf/eleven_base.urdf
         -bag_filenames $(arg bag_file)
         -keep_running true
-        -skip_seconds 3
+        -skip_seconds 5
         " output="screen">
-    </node> 
- <!-- 2 Bags file -->
-<!--
+    </node>
+    <!-- 2 Bags file -->
+    <!--
     <arg name="bag_path" default="$(find eleven_bags)/bags"/>
    
     <node pkg="cartographer_ros" type="cartographer_offline_node" name="cartographer_node" args="

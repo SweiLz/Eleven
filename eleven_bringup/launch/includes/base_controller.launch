@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Robot base controller -->
+    <include file="$(find ancore)/launch/ancore.launch">
+        <arg name="port" value="/dev/ttySTM32"/>
+        <arg name="baudrate" value="115200"/>
+
+        <arg name="wheel_separation" value="0.49"/>
+        <arg name="wheel_radius" value="0.10"/>
+        <arg name="linear_min" value="-0.5"/>
+        <arg name="linear_max" value="0.5"/>
+        <arg name="angular_min" value="-1.0"/>
+        <arg name="angular_max" value="1.0"/>
+
+        <arg name="publish_odom_frame" value="false"/>
+
+        <arg name="imu_frame_id" value="imu_link"/>
+        <arg name="imu_topic" value="imu"/>
+        <arg name="altitude_topic" value="altitude"/>
+        <arg name="odom_frame_id" value="odom"/>
+        <arg name="odom_topic" value="odom_wheel"/>
+        <arg name="base_frame_id" value="base_footprint"/>
+        <arg name="cmd_topic" value="cmd_vel"/>
+    </include>
+</launch>
