@@ -1,0 +1,25 @@
+
+ขั้นตอนการรัน
+
+ELEVEN PC: roslaunch eleven_bringup eleven_core.launch
+รอให้ไลด้าหมุนก่อน
+แล้วลอง Teleop ดูว่าได้ไหม
+Remote PC: roslaunch eleven_teleop eleven_teleop.launch
+
+รัน Pure localization
+ELEVEN PC: roslaunch eleven_localization eleven_localization.launch map_name:=fibo_f2
+ต้องเข็นหมุนไปหมุนมาสักแปปนึงเพื่อให้เข้าตำแหน่ง
+ดูว่าเข้ารึยังให้รัน
+Remote PC: roslaunch eleven_localization visualize.launch
+ถ้าเข้าตำแหน่งแล้วก็ปิดไปได้
+
+รัน Movebase navigation
+ELEVEN PC: roslaunch eleven_navigation eleven_navigation.launch map_name:=fibo_f2
+ELEVEN PC: rosrun eleven_navigation navigation_goals
+ดูการใน RVIZ
+Remote PC: roslaunch eleven_navigation visualize.launch
+
+แก้จุดสำหรับ Navigate ในไฟล์ eleven_navigation/config/point_map.yaml
+แล้วรัน rosrun eleven_navigation navigation_goals ใหม่
+
+
